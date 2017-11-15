@@ -1,17 +1,7 @@
 # Template Literal SQL Highlighting for Vim
 
-This is a [Vim](http://www.vim.org/) plugin that provides highlighting inside SQL [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) when using a module like [sql-template-strings](https://github.com/felixfbecker/node-sql-template-strings). For example:
+This is a [Vim](http://www.vim.org/) plugin that provides highlighting inside SQL [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) when using a module like [sql-template-strings](https://github.com/felixfbecker/node-sql-template-strings). It kind of works.
 
-```javascript
-const SQL = require('sql-template-strings')
-
-const book = 'harry potter'
-const author = 'J. K. Rowling'
-
-client.query('SELECT author FROM books WHERE name = $1 AND author = $2', [book, author])
-```
-
-It kind of works.
 
 This module is experimental and strongly inspired by [vim-graphql](https://github.com/jparise/vim-graphql).
 
