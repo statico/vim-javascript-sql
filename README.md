@@ -2,6 +2,7 @@
 
 This is a [Vim](http://www.vim.org/) plugin that provides highlighting inside SQL [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) when using a module like [sql-template-strings](https://github.com/felixfbecker/node-sql-template-strings). It kind of works.
 
+![screenshot](https://raw.githubusercontent.com/statico/vim-javascript-sql/master/screenshot.png)
 
 This module is experimental and strongly inspired by [vim-graphql](https://github.com/jparise/vim-graphql).
 
