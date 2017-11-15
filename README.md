@@ -22,3 +22,11 @@ This module is experimental and strongly inspired by [vim-graphql](https://githu
 
 1. `cd ~/.vim/bundle`
 1. `git clone https://github.com/statico/vim-javascript-sql.git`
+
+## Configuration
+
+This plugin uses the generic SQL syntax by default. If you want to use a different dialect, like PostgreSQL, put something like this in your .vimrc:
+
+```vim
+let g:javascript_sql_dialect = 'pgsql'
+```
