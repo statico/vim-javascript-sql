@@ -1,5 +1,5 @@
 " Vim plugin
-" Language: JavaScript
+" Language: TypeScript
 " Maintainer: Ian Langworth <ian@langworth.com>
 " Credits: Ian Langworth, Zac Collier <zacacollier@gmail.com>
 
