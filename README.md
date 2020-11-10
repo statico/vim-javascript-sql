@@ -30,3 +30,10 @@ This plugin uses the generic SQL syntax by default. If you want to use a differe
 ```vim
 let g:javascript_sql_dialect = 'pgsql'
 ```
+
+List of tags can be overridden using:
+
+```vim
+let g:javascript_sql_tags = ['sql', 'customSql']
+" default is ['SQL']
+```
