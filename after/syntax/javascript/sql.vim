@@ -24,5 +24,5 @@ exec 'syntax match sqlTaggedTemplate +\%(' . s:tags_regex . '\)\%(`\)\@=+ nextgr
 hi def link sqlTemplateString jsTemplateString
 hi def link sqlTaggedTemplate jsTaggedTemplate
 
-syn cluster jsExpression add=sqlTaggedTemplate
+syn cluster jsExpression add=sqlTemplateString,sqlTaggedTemplate
 syn cluster sqlTaggedTemplate add=sqlTemplateString
