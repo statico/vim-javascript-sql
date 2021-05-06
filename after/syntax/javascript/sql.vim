@@ -16,13 +16,17 @@ if exists('s:current_syntax')
   let b:current_syntax = s:current_syntax
 endif
 
-let s:tags_regex = join(g:javascript_sql_tags, '\|')
+let s:tags = '\%(' . join(g:javascript_sql_tags, '\|') . '\)'
 
-syntax region sqlTemplateString start=+`+ skip=+\\\(`\|$\)+ end=+`+ contains=@SQLSyntax,jsTemplateExpression,jsSpecial extend
-exec 'syntax match sqlTaggedTemplate +\%(' . s:tags_regex . '\)\%(`\)\@=+ nextgroup=sqlTemplateString'
+" will work only with pangloss/vim-javascript
+" inspired by https://github.com/jparise/vim-graphql/blob/master/after/syntax/javascript/graphql.vim
+exec 'syntax region sqlTemplateString matchgroup=jsTemplateString start=+' . s:tags . '\@20<=`+ skip=+\\\\\|\\`+ end=+`+ contains=@SQLSyntax,jsTemplateExpression,jsSpecial extend'
+exec 'syntax match sqlTaggedTemplate +' . s:tags . '\ze`+ nextgroup=sqlTemplateString'
+syntax region sqlTemplateExpression start=+${+ end=+}+ contained contains=jsTemplateExpression keepend
 
 hi def link sqlTemplateString jsTemplateString
 hi def link sqlTaggedTemplate jsTaggedTemplate
+hi def link sqlTemplateExpression jsTemplateExpression
 
 syn cluster jsExpression add=sqlTemplateString,sqlTaggedTemplate
 syn cluster sqlTaggedTemplate add=sqlTemplateString
